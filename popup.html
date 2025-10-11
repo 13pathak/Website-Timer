@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Time Blocker</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f8f9fa; color: #212529; margin: 0; padding: 16px; width: 350px; }
+        h1 { font-size: 18px; margin-top: 0; margin-bottom: 16px; color: #000; text-align: center; }
+        .form-container { background-color: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 16px; }
+        .form-group { margin-bottom: 12px; }
+        .form-group:last-child { margin-bottom: 0; }
+        label { display: block; font-weight: 500; font-size: 14px; margin-bottom: 6px; }
+        input { width: calc(100% - 18px); padding: 8px; border-radius: 4px; border: 1px solid #ced4da; font-size: 14px; }
+        .input-group { display: flex; align-items: center; gap: 8px; }
+        .input-group input { flex-grow: 1; }
+        .input-group span { font-size: 14px; color: #6c757d; }
+        button { width: 100%; background-color: #007bff; color: white; border: none; padding: 10px; border-radius: 4px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background-color 0.2s; }
+        button:hover { background-color: #0056b3; }
+        #sitesList { list-style: none; padding: 0; margin: 0; }
+        .site-item { display: flex; justify-content: space-between; align-items: center; background-color: #fff; padding: 12px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 8px; }
+        .site-info { display: flex; flex-direction: column; }
+        .site-domain { font-weight: 600; font-size: 15px; }
+        .site-details { font-size: 12px; color: #6c757d; margin-top: 4px;}
+        .remove-btn { background: none; border: none; font-size: 20px; cursor: pointer; color: #dc3545; padding: 4px 8px; border-radius: 4px;}
+        .remove-btn:hover { background-color: #f8d7da; }
+        .list-header { font-weight: 600; font-size: 16px; margin-bottom: 8px; padding-left: 4px; }
+        .empty-state { color: #6c757d; text-align: center; padding: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Website Time Blocker</h1>
+
+    <div class="form-container">
+        <div class="form-group">
+            <label for="domain">Website Domain</label>
+            <input type="text" id="domain" placeholder="e.g., youtube.com">
+        </div>
+        <div class="form-group">
+            <label for="timeLimit">Daily Time Limit</label>
+            <div class="input-group">
+                <input type="number" id="timeLimit" value="10" min="1">
+                <span>minutes</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="blockDuration">Block Duration</label>
+            <div class="input-group">
+                <input type="number" id="blockDuration" value="6" min="1">
+                <span>hours</span>
+            </div>
+        </div>
+        <button id="addSiteBtn">Add Website</button>
+    </div>
+
+    <div class="list-container">
+        <h2 class="list-header">Tracked Websites</h2>
+        <ul id="sitesList">
+            <!-- Site items will be injected here by JavaScript -->
+        </ul>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
