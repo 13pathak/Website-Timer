@@ -1,51 +1,41 @@
-Website Time Blocker
+# Website Time Blocker
 
-Website Time Blocker is a simple yet powerful Chrome extension designed to help you regain focus and boost your productivity. It allows you to set daily time limits on distracting websites. Once your time is up, the site is blocked for a duration you specify, encouraging you to concentrate on your work.
+Website Time Blocker is a Chrome extension for setting time limits on websites. When a site's limit is reached, the extension blocks it for a duration you choose.
 
-Features
-Set Custom Time Limits: Assign a specific daily time limit (in minutes) for any website you want to manage.
+## Features
 
-Custom Block Durations: Decide how long a website should remain blocked (in hours) once the daily time limit is reached.
+- **Custom Time Limits:** Set a daily time allowance in minutes for each website.
+- **Custom Block Durations:** Choose how long a site stays blocked, in hours.
+- **Time Tracking:** Checks the active tab in the last-focused browser window once per minute. Tracking pauses when the computer is idle.
+- **Site Blocking:** When a tracking check detects that the limit has been reached, matching open tabs redirect to the block page.
+- **Time Resets:** A site's counter resets when it is next tracked on a new day, and when its block expires.
+- **Site Management:** Add and remove websites from the toolbar popup, and view time spent or the scheduled unblock time.
 
-Automatic Time Tracking: The extension automatically tracks the time you spend on specified websites in the background.
+## Installation
 
-Instant Blocking: As soon as you hit your daily limit on a site, any open tabs for that website are immediately redirected to a "Time's Up!" page.
+1. Clone this repository or download and extract its ZIP.
+2. Open Chrome and visit `chrome://extensions`.
+3. Enable **Developer mode**.
+4. Click **Load unpacked** and select the repository folder containing `manifest.json`.
 
-Daily Reset: Your time counter for each website automatically resets to zero every day.
+## Usage
 
-Simple Management: Easily add, view, and remove websites from your tracked list through a clean and simple popup interface.
+### Add a website
 
-How to Use
-Install the Extension:
+1. Click the extension's toolbar icon.
+2. Enter a domain in **Website Domain**, such as `youtube.com` or `facebook.com`.
+3. Set **Daily Time Limit** in minutes.
+4. Set **Block Duration** in hours.
+5. Click **Add Website**.
 
-Navigate to chrome://extensions.
+Tracking matches the entered domain after removing a leading `www.`. Add other subdomains separately if you want their browsing time counted. Once a domain is blocked, the blocking rule also covers its subdomains.
 
-Enable "Developer mode".
+### Check time spent
 
-Click "Load unpacked" and select the folder containing the extension's files.
+Open the popup to view **Tracked Websites**. Each unblocked site shows its limit, block duration, and time spent. A blocked site shows its scheduled unblock time.
 
-Add a Website to Track:
+Time is sampled in one-minute increments, so the counter is an estimate rather than a second-by-second timer.
 
-Click the extension's icon in your Chrome toolbar to open the popup.
+### Remove a website
 
-In the "Website Domain" field, enter the domain of the site you want to limit (e.g., youtube.com, facebook.com).
-
-Set the "Daily Time Limit" in minutes.
-
-Set the "Block Duration" in hours.
-
-Click the "Add Website" button.
-
-Monitor Your Time:
-
-The "Tracked Websites" list in the popup shows all the sites you are managing.
-
-You can see the time limit, block duration, and how much time you've spent on each site for the day.
-
-If a site is currently blocked, it will show the time it will be unblocked.
-
-Remove a Website:
-
-To stop tracking a website, simply click the red × button next to its name in the list.
-
-Take control of your browsing habits and stay focused on what matters most!
+Click the red **×** next to a site to stop tracking it and remove its block.
